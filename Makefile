@@ -46,4 +46,4 @@ upload:
 
 jenkins:
 	docker build -t peakina .
-	docker run --rm -ti -v $(pwd):/app peakina ${TEST_CMD}
+	docker run --rm -v $(pwd):/app peakina ${TEST_CMD}
