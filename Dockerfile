@@ -8,6 +8,6 @@ COPY . /app
 # ADD requirements.txt $APP/requirements.txt
 # ADD tests/requirements.txt $APP/tests/requirements.txt
 RUN pip install -r requirements.txt
-RUN pip install .
+RUN pip install -e .
 
 CMD ["bash"]
