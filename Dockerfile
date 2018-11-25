@@ -1,4 +1,4 @@
-FROM python:3.6-slim-stretch
+FROM docker.io/python:3.6
 
 ENV APP /app
 RUN mkdir -p $APP
