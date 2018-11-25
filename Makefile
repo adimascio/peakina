@@ -1,4 +1,5 @@
 .DEFAULT_GOAL := all
+TEST_CMD     = echo $(pwd) && pytest --cov=peakina --cov-report=xml:coverage.xml --junitxml=pytestresult.xml
 
 .PHONY: install
 install:
@@ -42,3 +43,7 @@ build:
 .PHONY: upload
 upload:
 	twine upload dist/*
+
+jenkins:
+	docker build -t peakina .
+	docker run --rm -ti -v $(pwd):/app peakina ${TEST_CMD}
